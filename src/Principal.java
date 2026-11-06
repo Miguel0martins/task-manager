@@ -3,15 +3,13 @@ import java.util.ArrayList;
 public class Principal  {
    public static void main(String[] args) {
 
-       Tarefa t1 = new Tarefa();
-       t1.setDescricao("alura");
+       Tarefa t1 = new Tarefa("Alura");
        t1.concluir();
 
-       Tarefa t2 = new Tarefa();
-       t2.setDescricao("faxina");
+       Tarefa t2 = new Tarefa("faxina");
 
-       Tarefa t3 = new Tarefa();
-       t3.setDescricao("treino");
+       Tarefa t3 = new Tarefa("treino");
+
 
 
 
