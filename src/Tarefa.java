@@ -1,6 +1,7 @@
-public class Tarefa {
+public class Tarefa implements Comparable<Tarefa> {
     private String descricao;
     private boolean concluida;
+
 
     public boolean isConcluida() {
         return concluida;
@@ -27,5 +28,10 @@ public class Tarefa {
         } else {
             return descricao + " [ ] ";
         }
+    }
+
+    @Override
+    public int compareTo(Tarefa outra ) {
+        return descricao.compareTo(outra.getDescricao());
     }
 }

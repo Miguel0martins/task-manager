@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Principal  {
    public static void main(String[] args) {
@@ -6,9 +7,9 @@ public class Principal  {
        Tarefa t1 = new Tarefa("Alura");
        t1.concluir();
 
-       Tarefa t2 = new Tarefa("faxina");
+       Tarefa t2 = new Tarefa("Rezar");
 
-       Tarefa t3 = new Tarefa("treino");
+       Tarefa t3 = new Tarefa("Beber agua");
 
 
 
@@ -19,13 +20,11 @@ public class Principal  {
        listaDeTarefas.add(t2);
        listaDeTarefas.add(t3);
 
-
-       for (int i = 0; i < listaDeTarefas.size(); i++) {
-           System.out.println(listaDeTarefas.get(i));
+       Collections.sort(listaDeTarefas);
+       for (Tarefa tarefa : listaDeTarefas) {
+           System.out.println(tarefa);
        }
-
-
-
+//       listaDeTarefas.forEach(System.out::println);
     }
 }
 
