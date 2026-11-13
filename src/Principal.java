@@ -8,8 +8,10 @@ public class Principal  {
        t1.concluir();
 
        Tarefa t2 = new Tarefa("Rezar");
+//       t2.concluir();
 
        Tarefa t3 = new Tarefa("Beber agua");
+       t3.concluir();
 
 
 

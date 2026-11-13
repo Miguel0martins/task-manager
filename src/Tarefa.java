@@ -30,8 +30,19 @@ public class Tarefa implements Comparable<Tarefa> {
         }
     }
 
+//    @Override
+//    public int compareTo(Tarefa outra ) {
+//        return descricao.compareTo(outra.getDescricao());
+//    }
+
     @Override
-    public int compareTo(Tarefa outra ) {
-        return descricao.compareTo(outra.getDescricao());
+    public int compareTo (Tarefa outra){
+        if (this.isConcluida() && ! outra.isConcluida()){
+            return -1;
+        } else if (outra.isConcluida() && ! this.isConcluida()) {
+            return 1;
+        } else{
+            return 0;
+        }
     }
 }
