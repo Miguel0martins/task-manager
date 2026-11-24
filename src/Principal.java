@@ -34,33 +34,37 @@ public class Principal  {
        }
 
        while (opcao != 4) {
-
            System.out.println(menu);
-           opcao = sc.nextInt();
+           opcao = Integer.parseInt(sc.nextLine());
 
            if (opcao == 1) {
-               listaDeTarefas.add();
-               System.out.println("adicionando");
-
+               System.out.println("Digite o nome da tarefa:");
+               listaDeTarefas.add(new Tarefa(sc.nextLine()));
+               System.out.println("Tarefa adicionada!");
+           } else if (opcao == 2) {
+               for (int i = 0; i < listaDeTarefas.size(); i++) {
+                   System.out.println((i + 1) + " - " + listaDeTarefas.get(i));
+               }
+               System.out.println("Qual tarefa deseja concluir?");
+               int indice = Integer.parseInt(sc.nextLine()) - 1;
+               if (indice >= 0 && indice < listaDeTarefas.size()) {
+                   listaDeTarefas.get(indice).concluir();
+                   System.out.println("Tarefa concluída!");
+               } else {
+                   System.out.println("Número inválido");
+               }
+           } else if (opcao == 3) {
+               if (listaDeTarefas.isEmpty()) {
+                   System.out.println("Nenhuma tarefa cadastrada.");
+               }
+               listaDeTarefas.forEach(System.out::println);
+           } else if (opcao == 4) {
+               System.out.println("Saindo...");
+           } else {
+               System.out.println("Opção inválida");
            }
-
-           else if (opcao == 2) {
-               System.out.println("concluir");
-           }
-
-           else if (opcao == 3) {
-               System.out.println(listaDeTarefas);
-               System.out.println("listando");}
-
-          else if (opcao == 4) {
-               System.out.println("saindo");
-               break;
-           }
-
-           else{System.out.println(" opcao invalida");}
-
        }
-
+       sc.close();
 
 //       listaDeTarefas.forEach(System.out::println);
     }
